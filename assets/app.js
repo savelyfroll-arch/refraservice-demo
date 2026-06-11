@@ -575,7 +575,7 @@ function header() {
     <header class="topbar" id="top">
       <div class="topbar__inner">
         <a href="/" aria-label="Refraservice">
-          <img class="logo" src="/assets/logo2.jpg" alt="Refraservice">
+          <img class="logo" src="/assets/logo2-provided.png" alt="Refraservice">
         </a>
         <div class="contact-strip">
           <span><b>●</b> Ми завжди готові відповісти на ваші запитання.</span>
