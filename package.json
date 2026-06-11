@@ -1,0 +1,10 @@
+{
+  "name": "refraservice-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static public-facing Refraservice clone with local routes and frontend-only lead forms.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "start": "python3 -m http.server 4173"
+  }
+}
