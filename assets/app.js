@@ -594,7 +594,12 @@ function header() {
               <div class="submenu">${servicesMenu()}</div>
             </li>
             ${nav.slice(2).map(([url, label]) => `<li><a class="${basePath === url ? "active" : ""}" href="${url}">${label}</a></li>`).join("")}
-            <li><a href="#" aria-disabled="true">Статті</a></li>
+            <li><span class="nav__placeholder" aria-disabled="true">Статті</span></li>
+            <li class="nav__mobile-contacts">
+              <span><b>⌖</b> м. Дніпро, вул. Воскресенська, 21</span>
+              <a href="mailto:office@refraservice.com.ua"><b>@</b> office@refraservice.com.ua</a>
+              <a href="tel:+380502242509"><b>☎</b> (050) 224-25-09</a>
+            </li>
           </ul>
           <button class="search-toggle" type="button" data-search-toggle aria-label="Пошук">Пошук</button>
         </div>

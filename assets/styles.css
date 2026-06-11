@@ -157,6 +157,7 @@ img {
 }
 
 .nav__links a,
+.nav__placeholder,
 .nav__toggle,
 .search-toggle {
   border: 0;
@@ -167,6 +168,16 @@ img {
   font: inherit;
   cursor: pointer;
   transition: background 0.5s var(--ease-soft), transform 0.5s var(--ease-soft), box-shadow 0.5s var(--ease-soft);
+}
+
+.nav__placeholder {
+  display: inline-flex;
+  cursor: default;
+  opacity: 0.72;
+}
+
+.nav__mobile-contacts {
+  display: none;
 }
 
 .search-toggle {
@@ -1137,23 +1148,46 @@ textarea:focus {
 }
 
 @media (max-width: 980px) {
+  .topbar {
+    position: static;
+  }
+
   .topbar__inner {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 12px 0;
+    min-height: 0;
+    gap: 0;
+    padding: 10px 0 8px;
+  }
+
+  .topbar__inner > a {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .logo {
+    width: min(260px, calc(100vw - 32px));
+    padding: 4px 0;
   }
 
   .contact-strip {
-    justify-content: flex-start;
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    z-index: 40;
   }
 
   .mobile-menu-button {
     display: inline-flex;
+    align-items: center;
   }
 
   .nav__inner {
-    align-items: flex-start;
-    padding: 10px 0;
+    align-items: center;
+    min-height: 64px;
+    padding: 8px 0;
   }
 
   .nav__links {
@@ -1161,9 +1195,11 @@ textarea:focus {
     position: absolute;
     left: 16px;
     right: 16px;
-    top: 154px;
+    top: calc(100% + 8px);
     flex-direction: column;
     align-items: stretch;
+    max-height: calc(100vh - 86px);
+    overflow: auto;
     padding: 12px;
     background: rgba(177, 33, 40, 0.98);
     border-radius: var(--radius);
@@ -1185,8 +1221,33 @@ textarea:focus {
     margin: 0 0 8px 12px;
   }
 
+  .nav__mobile-contacts {
+    display: grid;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+  }
+
+  .nav__mobile-contacts span,
+  .nav__mobile-contacts a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 0;
+    overflow-wrap: anywhere;
+  }
+
   .search-panel {
-    top: 206px;
+    position: fixed;
+    top: 76px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    z-index: 45;
   }
 
   .hero__inner,
@@ -1234,7 +1295,7 @@ textarea:focus {
   }
 
   .contact-strip {
-    display: grid;
+    display: none;
   }
 
   .hero {
